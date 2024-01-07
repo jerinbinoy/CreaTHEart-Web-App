@@ -1,0 +1,5 @@
+.navbar.bg-body-tertiary {
+    --bs-bg-opacity: .3;
+    backdrop-filter: blur(4px);
+}
+
