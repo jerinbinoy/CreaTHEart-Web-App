@@ -1,15 +1,29 @@
-import React from 'react'
-import banner from '../Assets/nobody-photography-studio.jpg';
+import React, { useState } from 'react'
+import {Col,Row,Container} from 'react-bootstrap';
 import './Home.css';
+
 function Home() {
+  const [title,setTitle] = useState(false);
+  setTimeout(()=>{
+    setTitle(true)
+  },3500);
+  if(title){
+    document.getElementById('homePageTitle').style.display = "block";
+  };
   return (
-    <div>
-      <div className='homePageBanner'> 
-        <img src={banner} alt="Nobody-photography-studio" className='bannerImage' />
-      </div>
-      <div>
-        <h2 className='homePageTitle '>Creating Designs <br></br>with Art & Heart</h2>
-      </div>
+    <div >
+     
+      <Row className='homeRow'>
+        <Col>
+        </Col>
+        <Col xs="12" md="6" className='d-flex  justify-content-center align-items-center'>
+          <h2 className='homePageTitle me-2  ' id='homePageTitle'>
+            <span className='letterGold'>C</span>reating 
+            <span className='letterGold'>D</span>esigns 
+            <br></br>with Art & Heart</h2>
+        </Col>
+      </Row>
+    
     </div>
   )
 }

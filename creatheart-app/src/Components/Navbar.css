@@ -1,5 +1,7 @@
 .navbar.bg-body-tertiary {
     --bs-bg-opacity: .3;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(5px);
 }
-
+.me-4.btn-outline-warning {
+    --bs-btn-border-color : none;
+}

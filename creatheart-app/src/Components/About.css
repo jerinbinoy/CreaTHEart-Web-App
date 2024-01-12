@@ -1,0 +1,12 @@
+.aboutRow{
+    width: 100%;
+    height: 100%;
+    top: 90%;
+    position: absolute;
+}
+.aboutTitle{
+    font-weight: 500;
+}
+.arrowIcon{
+    transition: .5s ease;
+}
