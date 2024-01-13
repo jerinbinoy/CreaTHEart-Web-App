@@ -5,3 +5,6 @@
 .me-4.btn-outline-warning {
     --bs-btn-border-color : none;
 }
+.me-2.btn-outline-warning {
+    --bs-btn-border-color : none;
+}

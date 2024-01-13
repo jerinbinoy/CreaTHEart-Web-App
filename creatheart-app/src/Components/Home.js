@@ -11,7 +11,7 @@ function Home() {
     document.getElementById('homePageTitle').style.display = "block";
   };
   return (
-    <div >
+    <div>
      
       <Row className='homeRow'>
         <Col>
@@ -19,7 +19,7 @@ function Home() {
         <Col xs="12" md="6" className='d-flex  justify-content-center align-items-center'>
           <h2 className='homePageTitle me-2  ' id='homePageTitle'>
             <span className='letterGold'>C</span>reating 
-            <span className='letterGold'>D</span>esigns 
+            <span className='letterGold ms-2'>D</span>esigns 
             <br></br>with Art & Heart</h2>
         </Col>
       </Row>

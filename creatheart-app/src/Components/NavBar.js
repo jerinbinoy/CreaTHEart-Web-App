@@ -32,14 +32,33 @@ function NavBar() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   
                   <Button href="home" className='me-4 homebutton' variant="outline-warning">Home</Button>
-                  <Button href="about" className='me-4' variant="outline-warning">About</Button>
+                  <Dropdown >
+                    <Dropdown.Toggle variant="outline-warning" id="dropdown-basic" className='me-2'>
+                      Services
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">Resume & CV Making</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">LinkedIn Profile Creation</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Poster Design</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Web Designing</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Advertisement Making</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Portfolio</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Animation</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Video Editing</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Photo Editing</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Logo Making</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Digital Marketing</Dropdown.Item>
+                     </Dropdown.Menu>
+                  </Dropdown>
+
                 </Nav>
             </Offcanvas.Body>
             </Navbar.Offcanvas>
               
               
 
-              <Navbar.Brand href="#"  ><img
+              <Navbar.Brand href="home"  ><img
                     alt=""
                     src={logo}
                     width="30"
@@ -66,27 +85,7 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
-
-                 <Dropdown >
-                  <Dropdown.Toggle variant="outline-warning" id="dropdown-basic" className='me-4'>
-                    Services
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Resume & CV Making</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">LinkedIn Profile Creation</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Poster Design</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Web Designing</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Advertisement Making</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Portfolio</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Animation</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Video Editing</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Photo Editing</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Logo Making</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Digital Marketing</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-
+                  <Button href="about" className='me-4' variant="outline-warning">About</Button>
                   <Button href="#action2" className='me-4' variant="outline-warning">Contact Us</Button>
                 </Nav>
                 

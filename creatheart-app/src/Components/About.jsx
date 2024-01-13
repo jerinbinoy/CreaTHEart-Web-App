@@ -1,31 +1,38 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap';
 import './About.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown} from '@fortawesome/free-solid-svg-icons'
+
 
 function About() {
-  window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-    document.getElementById("arrowIcon").style.display = "none";
-    
-  } else {
-    document.getElementById("arrowIcon").style.display = "block";
-    
-  }
-}
+  
 
   return (
-    <div >
-        <Row className='aboutRow'>
-            <Col className=' d-flex justify-content-center mt-3'>
+    <div className='aboutRowTitle'>
+        <Row >
+            <Col className=' d-flex justify-content-center mt-3 p-0'>
               <h2 className='aboutTitle'>
                 About Us 
               </h2>
-              <FontAwesomeIcon icon={faArrowDown} size='2x' className='arrowIcon ms-3' id='arrowIcon'/>
+              
             </Col>
+        </Row>
+        <Row className='aboutContent'>
+          <Col xs='1' className='p-0'></Col>
+          <Col className='aboutText p-4 shadow-sm d-grid mb-5'>
+            <h3 className='text-center'>Welcome to CreaTheart - Where every design tells a Story!</h3><br />
+                <Row>
+                      <Col xs='12' md="4" className=' position-relative p-2'>
+                          <p>At CreaTheart, we are not just designers; we are storytellers, problem solvers, and creators of visual experiences. With a passion for turning ideas into visually compelling narratives, we embark on a journey to bring your brand to life through the power of design.</p>
+                      </Col>
+                      <Col xs='12' md="4" className=' position-relative p-2'>
+                          <p>Our mission is simple — to deliver stunning and effective design solutions that captivate, communicate, and inspire. We believe in the transformative power of design and its ability to elevate brands, engage audiences, and leave a lasting impression.</p>
+                      </Col>
+                      <Col xs='12' md="4" className='position-relative p-2'>
+                          <p>CreaTheart is a team of dedicated and talented graphic designers committed to pushing the boundaries of creativity. With a diverse set of skills and a shared love for design, we collaborate seamlessly to deliver unique and impactful visual solutions.</p>
+                      </Col>
+                </Row>
+          </Col>
+          <Col xs='1' className='p-0 overflow-hidden'></Col>
         </Row>
     </div>
   )

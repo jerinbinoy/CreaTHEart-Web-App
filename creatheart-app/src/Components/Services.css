@@ -1,0 +1,44 @@
+.servicesText{
+    margin: 0;
+    font-weight: 600;
+    font-size: 25px;
+    display: flex;
+    transition: 1s ease ;
+    
+}
+.resumeImg{
+    width: 65%;
+    padding: 0;
+    transition: .7s;
+    
+}
+.resumeImg:hover{
+        transform: scale(1.1);
+}
+.resumeText{
+    font-size: 4vw;
+    font-weight: 700;
+    text-shadow: 10px;
+    animation: slideright 1s ease-in;
+}
+.serviceRow{
+    background: radial-gradient(rgb(254, 254, 225),white);
+}
+@keyframes slideright{
+    0%{
+      right:250px;
+        
+    }
+    100%{
+        right:0px;
+       
+    }
+}
+@keyframes textleft {
+    0%{
+        right:300px;
+    }
+    100%{
+        right:0px;
+    }
+}

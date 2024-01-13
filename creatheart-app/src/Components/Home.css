@@ -1,12 +1,9 @@
 
 .homeRow{
-    height:90%;
-    position: absolute;
-    width: 100%;
-    margin: 0;
+    height:670px;
     background-image: url('../Assets/nobody-photography-studio.jpg');
     background-size: cover;
-    top: 0;
+    margin: 0;
     z-index: -5;
     overflow-x: hidden;
 }
@@ -18,7 +15,7 @@
     position: relative;
     font-size: calc(1em + 4vw);
     font-weight: 600;
-    z-index: -5;
+    z-index: 1;
     animation: fadeup 1s ease-in ;
     
 }
