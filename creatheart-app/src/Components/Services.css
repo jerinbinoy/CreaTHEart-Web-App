@@ -7,7 +7,7 @@
     
 }
 .resumeImg{
-    width: 65%;
+    width: 80%;
     padding: 0;
     transition: .7s;
     
@@ -23,6 +23,13 @@
 }
 .serviceRow{
     background: radial-gradient(rgb(254, 254, 225),white);
+}
+.nextArrowRight{
+    cursor: pointer;
+}
+.previousArrowLeft{
+    cursor: pointer;
+    display: none;
 }
 @keyframes slideright{
     0%{
