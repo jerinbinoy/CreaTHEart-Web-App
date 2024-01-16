@@ -6,23 +6,35 @@
     transition: 1s ease ;
     
 }
-.resumeImg{
+.serviceImg{
     width: 80%;
     padding: 0;
-    transition: .7s;
+    transition: .7s ease-in-out;
+
     
 }
-.resumeImg:hover{
+.serviceImg:hover{
         transform: scale(1.1);
 }
-.resumeText{
+.serviceTitle{
     font-size: 4vw;
     font-weight: 700;
     text-shadow: 10px;
     animation: slideright 1s ease-in;
+    transition: .7s ease;
 }
 .serviceRow{
     background: radial-gradient(rgb(254, 254, 225),white);
+}
+.serviceRow::-webkit-scrollbar{
+    display: none;
+}
+.servicesRow::-webkit-scrollbar{
+    display: none;
+}
+.servicesRow{
+    height: 600px;
+    overflow: hidden;
 }
 .nextArrowRight{
     cursor: pointer;
@@ -49,3 +61,4 @@
         right:0px;
     }
 }
+
