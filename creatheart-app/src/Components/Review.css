@@ -1,0 +1,10 @@
+.reviewsRow{
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+.reviewsRow::-webkit-scrollbar{
+    display: none;
+}

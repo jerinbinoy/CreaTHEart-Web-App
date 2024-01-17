@@ -7,6 +7,7 @@ import Home from './Components/Home.js';
 import About from './Components/About.jsx';
 import Services from './Components/Services.jsx';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Reviews from './Components/Reviews.jsx';
 
 function App() {
     
@@ -17,6 +18,7 @@ function App() {
     <Home />
     <Services />
     <About />
+    <Reviews/>
     
     </>
   );
