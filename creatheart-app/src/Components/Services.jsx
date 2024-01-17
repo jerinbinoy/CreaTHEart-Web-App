@@ -1,9 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './Services.css';
 import {Row,Col} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown,faCircleChevronRight,faCircleChevronLeft} from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown,faChevronRight,faChevronLeft} from '@fortawesome/free-solid-svg-icons'
 import ResumeImg from '../Assets/Resume vector image.png'
 import linkedIN from '../Assets/Add User-rafiki.svg';
 import PosterDesign from '../Assets/poster-designing.svg';
@@ -76,17 +76,14 @@ function Services() {
   }
  ];
   
-  const [arrowLeft,setArrowLeft] = useState(false);
-  const [service,setService] = useState(false);
+  
   let [count,setCount] = useState(0);
 
-  const rightArrow = document.getElementById("nextArrowRight");
+  
   
 
-
   function handleClick(arrow){
-        setService(true);
-        setArrowLeft(true);
+        
         const leftArrow = document.getElementById("previousArrowLeft");
         const serviceImage = document.getElementById("serviceImg");
         const serviceTitle = document.getElementById("serviceTitle");
@@ -112,12 +109,14 @@ function Services() {
   }
   
   window.onscroll = function() {scrollFunction()};
-
+  
 
 function scrollFunction() {
   if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
     document.getElementById("arrowIcon").style.opacity = "0";
     document.getElementById("servicesText").style.opacity = "0";
+    
+  
     //document.getElementById("servicesText").style.float = "left ";
     
   } else {
@@ -126,6 +125,7 @@ function scrollFunction() {
     //document.getElementById("servicesText").style.animation = "none";
   } 
 }
+
   return (
     <div className='serviceRow'>
       <Row className='text-center pt-2 ' >
@@ -134,7 +134,7 @@ function scrollFunction() {
 
       <Row className='d-flex align-items-center servicesRow'>
           <Col xs="1" className='text-end ps-3 pe-0' >
-          <FontAwesomeIcon icon={faCircleChevronLeft} size='3x' className='previousArrowLeft' id='previousArrowLeft' onClick={()=>handleClick('leftArrow')}/>
+          <FontAwesomeIcon icon={faChevronLeft} size='3x' className='previousArrowLeft' id='previousArrowLeft' onClick={()=>handleClick('leftArrow')}/>
           </Col>
         <Col xs="10" className=' p-0 d-md-flex justify-content-md-end align-items-center h-100'>
            <Col xs="12" md="6" className='text-center'>
@@ -147,8 +147,8 @@ function scrollFunction() {
           </Col>
         </Col>
           
-          <Col xs="1" className='text-start p-0 '>
-             <FontAwesomeIcon icon={faCircleChevronRight} size='3x' className='nextArrowRight' id='nextArrowRight' onClick={()=>handleClick('rightArrow')}/>
+          <Col xs="1" className='text-center ps-0 pe-3 pe-md-0 ps-lg-5'>
+             <FontAwesomeIcon icon={faChevronRight} size='3x' className='nextArrowRight' id='nextArrowRight' onClick={()=>handleClick('rightArrow')}/>
           </Col>
         
         
