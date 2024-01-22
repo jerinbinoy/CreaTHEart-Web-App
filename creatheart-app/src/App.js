@@ -8,6 +8,7 @@ import About from './Components/About.jsx';
 import Services from './Components/Services.jsx';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Reviews from './Components/Reviews.jsx';
+import ContactUs from './Components/ContactUs.jsx';
 
 function App() {
     
@@ -19,6 +20,7 @@ function App() {
     <Services />
     <About />
     <Reviews/>
+    <ContactUs/>
     
     </>
   );

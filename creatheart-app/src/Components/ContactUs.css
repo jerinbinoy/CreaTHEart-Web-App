@@ -1,0 +1,36 @@
+
+.contactUsTitle{
+    font-weight: 700;
+    color: white;
+}
+.emptymodern{
+    height: 600px;
+}
+
+.collectionOfImages{
+    overflow-x: hidden;
+   
+}
+.contactUsSection{
+    background-color: rgb(23, 23, 23);
+}
+.socialMediaLinks{
+    list-style: none;
+}
+.socialMediaLink{
+    cursor: pointer;
+}
+.socialMediaLink:hover{
+    color: rgb(231, 203, 22);
+    transform: scale(1.2);
+    
+}
+.contactForm{
+    border-radius: 20px;
+    background-color: grey;
+    width: 80%;
+    
+}
+.contactFormTitle{
+    font-weight: 600;
+}

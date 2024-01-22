@@ -9,7 +9,7 @@ function Reviews() {
             <Row>
                 <h2 className='text-center text-white m-3'>Reviews</h2>
             </Row>
-    <Row className='reviewsRow p-0 '>
+    <Row className='reviewsRow p-0 mb-5'>
         <Card bg='light' text='black' style={{ width: '18rem' }} className="mb-2 ms-5">
           <Card.Header className="text-muted">Andrews Paul</Card.Header>
           <Card.Body>
