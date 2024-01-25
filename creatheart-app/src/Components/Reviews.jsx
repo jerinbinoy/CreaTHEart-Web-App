@@ -33,30 +33,36 @@ function Reviews() {
  reviewsData.forEach((doc) => {
         let individualData = doc.data();
         finalData.push(
-          <Card bg='light' text='black' style={{ width: '18rem' }} className="mb-2 ms-5">
-          <Card.Header className="text-muted">{individualData.Name}</Card.Header>
+          <Card  text='white' style={{ width: '18rem'}} className="mb-4 ms-5 Cards">
+          <Card.Header className="headerText">{individualData.Name}</Card.Header>
           <Card.Body>
             <Card.Title>{individualData.Heading}</Card.Title>
             <Card.Text>
               {individualData.Comment}
             </Card.Text>
           </Card.Body>
-          <Card.Footer className="text-muted">2 days ago</Card.Footer>
+          <Card.Footer className="footerText">{individualData.Date}</Card.Footer>
           </Card>
             );  
 })  
   async function setData(){
+    const d = new Date();
+     let year = d.getFullYear();
+     let month = d.getMonth();
+     let date = d.getDate();
+     let fullDate = date+"/"+month+'/'+year;
     await setDoc(doc(FirebaseApp, "Reviews",fullName), {
       Name: fullName,
       Heading: heading,
-      Comment: comment
+      Comment: comment,
+      Date: fullDate
     });
     setModalShow(false);
     setShowing(true);
   }
   return (
     <div>
-      <Row className='bg-dark'>
+      <Row className='Reviews'>
             <Row>
                 <h2 className='text-center text-white m-3'>Reviews</h2>
             </Row>
@@ -66,7 +72,7 @@ function Reviews() {
         { finalData}
         </Row>
         <Col className='text-center mb-5'>
-          <Button variant='primary' onClick={() => setModalShow(true)}>Add Review</Button>
+          <Button variant='warning' onClick={() => setModalShow(true)}>Add Review</Button>
 
              <Modal
                 show={modalShow}

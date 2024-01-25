@@ -13,8 +13,8 @@ function ContactUs() {
   
   return (
     <div className='contactUsSection'>
-        <Row className=' collectionOfImages'>
-                <img src={EmptyModern} alt="" className='emptymodern ' id='emptymodern' />
+        <Row className=' collectionOfImages m-0 p-0'>
+                {/*<img src={EmptyModern} alt="" className='emptymodern ' id='emptymodern' />*/}
         </Row>
         <Row>
             <h2 className='text-center contactUsTitle mt-3'>Contact Us</h2>
@@ -30,23 +30,25 @@ function ContactUs() {
         </Row>
         <Row className='d-flex justify-content-center'>
             <Row className='contactForm  m-5 '>
-              <h3 className='text-center mt-2 contactFormTitle'>Write to us</h3>
+              <h3 className='text-center mt-2 contactFormTitle text-white'>Write to us</h3>
                 <Form>
                     <Form.Group className="mb-3 mt-2" controlId="exampleForm.ControlInput1">
-                      <Form.Label>Name</Form.Label>
+                      <Form.Label className='text-white'>Name</Form.Label>
                       <Form.Control size='sm' type="email" placeholder="Fullname" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                      <Form.Label>Email</Form.Label>
+                      <Form.Label className='text-white'>Email</Form.Label>
                       <Form.Control size='sm' type="email" placeholder="name@example.com" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea3">
-                      <Form.Label>Comment</Form.Label>
+                      <Form.Label className='text-white'>Comment</Form.Label>
                       <Form.Control as="textarea" rows={3} />
                     </Form.Group>
-                    <Button variant="primary" type="submit" className='mb-3 justify-content-center'>
+                    <div className='text-center'>
+                    <Button variant="warning" type="submit" className='mb-3 '>
                       Submit
                     </Button>
+                    </div>
                 </Form>
             </Row>
         </Row>
