@@ -1,4 +1,8 @@
 
 .items{
     list-style: none;
+    
+}
+.items li {
+    cursor: pointer;
 }

@@ -44,7 +44,7 @@ function ContactUs() {
                       <Form.Label>Comment</Form.Label>
                       <Form.Control as="textarea" rows={3} />
                     </Form.Group>
-                    <Button variant="primary" type="submit" className='mb-3'>
+                    <Button variant="primary" type="submit" className='mb-3 justify-content-center'>
                       Submit
                     </Button>
                 </Form>
