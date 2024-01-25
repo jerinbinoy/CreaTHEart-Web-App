@@ -7,15 +7,17 @@ import './Review.css';
 import {FirebaseApp} from '../Firebase/config';
 import { collection,getDocs} from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
+import AddreviewAlert from './Alerts/AddreviewAlert';
 
 
 
 function Reviews() {
   const [modalShow, setModalShow] = React.useState(false);
-  let [reviewsData,setreviewsData] = useState([]);
+  const [reviewsData,setreviewsData] = useState([]);
   const [fullName, setFullName] = useState('');
   const [heading, setHeading] = useState('');
   const [comment, setComment] = useState('');
+  const [show, setShowing] = useState(false);
   
 
   useEffect(() => {
@@ -50,8 +52,7 @@ function Reviews() {
       Comment: comment
     });
     setModalShow(false);
-    alert('Successfully added your review.Thanks for sharing!')
-    
+    setShowing(true);
   }
   return (
     <div>
@@ -107,7 +108,7 @@ function Reviews() {
                   <Button onClick={setData} >Submit</Button>
                 </Modal.Footer>
               </Modal>
-              
+              {show ? <AddreviewAlert display='true' /> : null}
               
         </Col>
              
