@@ -11,9 +11,10 @@ import './Navbar.css';
 
 
 function NavBar() {
+
   return (
     <>
-    <Navbar  expand='lg' className="bg-body-tertiary fixed-top" data-bs-theme="dark" bg="dark"  >
+    <Navbar  expand='lg' className="bg-body-tertiary fixed-top" data-bs-theme="dark" bg="dark"  id='navbar'>
           <Container fluid>
             
             

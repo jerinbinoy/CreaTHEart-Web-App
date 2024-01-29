@@ -3,15 +3,17 @@
     font-weight: 600;
     font-size: 25px;
     display: flex;
-    transition: 1s ease ;
+    transition: 2s ease-in-out;
+    margin-left: 42%;
     
 }
 .serviceImg{
     width: 80%;
     padding: 0;
-    transition: .7s ease-in-out;
-
-    
+    transition: .7s ease-in-out;  
+}
+#serviceDetails{
+    color:rgb(198, 196, 196) ;
 }
 .serviceImg:hover{
         transform: scale(1.1);
@@ -22,9 +24,10 @@
     text-shadow: 10px;
     animation: slideright 1s ease-in;
     transition: .7s ease;
+    color: white;
 }
 .serviceRow{
-    background: radial-gradient(rgb(254, 254, 225),white);
+    background: radial-gradient(rgb(17, 75, 97),rgb(3, 14, 22)); 
 }
 .serviceRow::-webkit-scrollbar{
     display: none;
@@ -38,10 +41,12 @@
 }
 .nextArrowRight{
     cursor: pointer;
+    color: rgb(198, 196, 196);
 }
 .previousArrowLeft{
     cursor: pointer;
     display: none;
+    color: rgb(198, 196, 196);
 }
 @keyframes slideright{
     0%{

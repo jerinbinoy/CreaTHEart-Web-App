@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap';
 import './About.css';
+import Cherukkanwithphone from '../Assets/cherkkanwithphone.png';
 
 
 function About() {
@@ -16,9 +17,9 @@ function About() {
               
             </Col>
         </Row>
-        <Row className='aboutContent'>
-          <Col xs='1' className='p-0'></Col>
-          <Col className='aboutText p-4 shadow-sm d-grid mb-5'>
+        <Row className='aboutContent d-flex align-items-center justify-content-center'>
+          
+          <Col className='aboutText p-4 shadow-sm d-grid mb-5 ms-2 mt-5' xs="11" md="6">
             <h3 className='text-center'>Welcome to CreaTheart - Where every design tells a Story!</h3><br />
                 <Row>
                       <Col xs='12' md="4" className=' position-relative p-2'>
@@ -32,7 +33,9 @@ function About() {
                       </Col>
                 </Row>
           </Col>
-          <Col xs='1' className='p-0 overflow-hidden'></Col>
+          <Col xs='12' md="5" className='p-0 overflow-hidden ms-3'>
+            <img src={Cherukkanwithphone} className='cherkkanImage'></img>
+          </Col>
         </Row>
     </div>
   )

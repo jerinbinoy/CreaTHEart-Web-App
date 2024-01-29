@@ -1,18 +1,25 @@
 .aboutRowTitle{
     width: 100%;
     height: 10%;
-    
+    background: radial-gradient(at right 50%, rgb(24, 102, 134),rgb(3, 14, 22)); ;
 }
 .aboutTitle{
     font-weight: 500;
+    color: white;
 }
 #arrowIcon{
     transition: 1s ease-in-out;
 }
 .aboutText{
-    background-color: rgb(233, 231, 231);
+    background: linear-gradient( to right, rgb(159, 158, 158),rgb(218, 218, 218));
+    box-shadow: rgb(17, 17, 17) 5px 4px 20px 0px;
     display: flex;
     justify-content: center;
     border-radius: 10px;
+    height:80%;
     
+    
+}
+.cherkkanImage{
+    height: 600px;
 }

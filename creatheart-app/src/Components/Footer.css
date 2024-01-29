@@ -6,3 +6,9 @@
 .items li {
     cursor: pointer;
 }
+.footer{
+    background-color: rgb(85, 100, 110);
+}
+.allRights{
+    color: rgb(198, 196, 196);
+}

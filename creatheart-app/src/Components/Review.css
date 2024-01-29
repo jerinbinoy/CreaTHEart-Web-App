@@ -15,7 +15,11 @@
     background: linear-gradient(rgb(89, 114, 129),rgb(5, 24, 38));
     box-shadow: rgb(30, 66, 91) 5px 4px 20px 0px ;
     border: 1px solid;
-    border-color: rgb(4, 24, 39);
+    border-color: rgb(33, 90, 111);
+    transition: 1s ease;
+}
+.Cards:hover{
+    transform: scale(1.1);
 }
 .footerText{
     color: rgb(185, 184, 184);

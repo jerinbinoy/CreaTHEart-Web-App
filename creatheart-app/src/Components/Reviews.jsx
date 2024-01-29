@@ -33,7 +33,7 @@ function Reviews() {
  reviewsData.forEach((doc) => {
         let individualData = doc.data();
         finalData.push(
-          <Card  text='white' style={{ width: '18rem'}} className="mb-4 ms-5 Cards">
+          <Card  text='white' style={{ width: '18rem'}} className="mb-5 ms-5 mt-3 Cards">
           <Card.Header className="headerText">{individualData.Name}</Card.Header>
           <Card.Body>
             <Card.Title>{individualData.Heading}</Card.Title>
@@ -64,7 +64,7 @@ function Reviews() {
     <div>
       <Row className='Reviews'>
             <Row>
-                <h2 className='text-center text-white m-3'>Reviews</h2>
+                <h2 className='text-center text-white m-3 mb-1'>Reviews</h2>
             </Row>
             
         <Row className='reviewsRow p-0 mb-3' id='reviewsRow'>
@@ -80,6 +80,7 @@ function Reviews() {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
+                variant="dark"
               >
                 <Modal.Header closeButton className='align-items-start pb-1'>
                   <div className='d-grid'>

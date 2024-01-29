@@ -7,7 +7,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyD325_OZEdX_ogj1axSzgHmujuc4ZUDUEA",
     authDomain: "creatheart-f0196.firebaseapp.com",
     projectId: "creatheart-f0196",
-    storageBucket: "creatheart-f0196.appspot.com",
+    storageBucket: "gs://creatheart-f0196.appspot.com/Images",
     messagingSenderId: "121855940630",
     appId: "1:121855940630:web:13d2a70e54e4c6681e3d37",
     measurementId: "G-L67X5CH7TF"

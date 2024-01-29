@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ContactUs.css';
 import {Row} from 'react-bootstrap';
-import EmptyModern from '../Assets/empty-modern-creative.jpg';
+import Selfie from '../Assets/selfie.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope,faPhone} from '@fortawesome/free-solid-svg-icons';
 import {faWhatsapp,faInstagram,faFacebook} from '@fortawesome/free-brands-svg-icons'
@@ -14,7 +14,7 @@ function ContactUs() {
   return (
     <div className='contactUsSection'>
         <Row className=' collectionOfImages m-0 p-0'>
-                {/*<img src={EmptyModern} alt="" className='emptymodern ' id='emptymodern' />*/}
+                
         </Row>
         <Row>
             <h2 className='text-center contactUsTitle mt-3'>Contact Us</h2>
@@ -28,7 +28,7 @@ function ContactUs() {
             <li className='pe-5'><FontAwesomeIcon icon={faPhone} color='white' size='2x' className='socialMediaLink'  /></li>
           </ul>
         </Row>
-        <Row className='d-flex justify-content-center'>
+        <Row className='d-flex justify-content-center'  >
             <Row className='contactForm  m-5 '>
               <h3 className='text-center mt-2 contactFormTitle text-white'>Write to us</h3>
                 <Form>
@@ -51,7 +51,9 @@ function ContactUs() {
                     </div>
                 </Form>
             </Row>
+            
         </Row>
+        
     </div>
   )
 }
