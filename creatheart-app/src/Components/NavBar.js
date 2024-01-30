@@ -39,7 +39,7 @@ function NavBar() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Resume & CV Making</Dropdown.Item>
+                      <Dropdown.Item href="#/action-1">Resume/CV Making</Dropdown.Item>
                       <Dropdown.Item href="#/action-2">LinkedIn Profile Creation</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">Poster Design</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">Web Designing</Dropdown.Item>
@@ -47,7 +47,6 @@ function NavBar() {
                       <Dropdown.Item href="#/action-3">Portfolio</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">Animation</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">Video Editing</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Photo Editing</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">Logo Making</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">Digital Marketing</Dropdown.Item>
                      </Dropdown.Menu>

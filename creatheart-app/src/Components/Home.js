@@ -2,39 +2,65 @@ import React, { useState } from 'react'
 import {Col,Row,Button} from 'react-bootstrap';
 import './Home.css';
 import Manwithlap from '../Assets/manwithlap.png';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Boywithlap from '../Assets/boywithlap.png';
+import Gentleman from '../Assets/Gentleman.png';
+import Ladywithphone from '../Assets/Ladywithphone.png';
+import Girlwithphone from '../Assets/Girlwithphone.png';
 
 function Home() {
-  const [title,setTitle] = useState(false);
+  //const [title,setTitle] = useState(false);
+  const [homeChange,setHomeChange] = useState(false);
+  let [increment,setIncrement] = useState(0);
+  const homeImages = [{Image:Manwithlap},
+                      {Image:Boywithlap},
+                      {Image:Gentleman},
+                      {Image:Ladywithphone},
+                      {Image:Girlwithphone}]
 
-  setTimeout(()=>{
+  /*setTimeout(()=>{
     setTitle(true)
   },3500);
   if(title){
     document.getElementById('homePageTitle').style.display = "block";
-  };
+  };*/
 
- 
+setInterval(()=>{
+  increment < 4 ? setIncrement(increment += 1) : setIncrement(0);
+},6000);
+
+function scroll(){
+      document.documentElement.scrollTop = 700;
+      document.body.scrollTop = 700;
+}
+
 
   return (
     <div>
      
-      <Row className='homeRow'>
-        <Col className='d-flex justify-content-center align-items-md-end' xs="12" md='6'>
-        <img src={Manwithlap} className='frontPageImage mt-4 mt-md-0' alt='homepageImage'></img>
+      <Row className='homeRow' id='homeSection'>
+        <Col className='d-flex justify-content-center align-items-md-end' xs="12" md='6' id='leftSectionHome'>
+        <img src={homeImages[increment].Image} className='frontPageImage mt-4 mt-md-0' alt='homepageImage' id='frontPageImage'></img>
         </Col>
-        <Col xs="12" md="6" className='d-grid  justify-content-center align-items-center'>
-          <h2 className='homePageTitle me-2  ' id='homePageTitle'>
+        <Col xs="12" md="6" className='d-grid ' id='rightSectionHome'>
+          <Col  className='d-grid  justify-content-center align-items-end g-0' id='homepageDetails'>
+          <h2 className='homePageTitle me-2 ' id='homePageTitle'>
             <span className='letterGold'>C</span>reating 
             <span className='letterGold ms-2'>D</span>esigns 
             <br></br>with Art & Heart</h2>
+           
+          </Col>
             
-           
+           <Col className='d-flex align-items-start justify-content-center'>
+              <Button variant='warning' size='lg' onClick={()=> scroll}>
+                  Get Started
+                  <FontAwesomeIcon icon={faChevronRight}  className='previousArrowRight ms-3' />
+              </Button>
+           </Col>
+       </Col>
 
-          
-           
-        </Col>
       </Row>
-    
     </div>
   )
 }

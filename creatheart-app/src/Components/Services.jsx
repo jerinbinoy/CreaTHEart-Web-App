@@ -29,7 +29,10 @@ function Services() {
     servicesCollection.push(serviceData);
   });
 
-   
+  
+   if (document.body.scrollLeft){
+    handleClick('rightArrow')
+   }
   
   
   
@@ -66,11 +69,11 @@ function Services() {
 function scrollFunction() {
   if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
     document.getElementById("arrowIcon").style.opacity = "0";
-    document.getElementById("servicesText").style.marginLeft = "0%";
+    document.getElementById("servicesTitle").style.marginLeft = "0%";
     
   } else {
     document.getElementById("arrowIcon").style.opacity = "1";
-    document.getElementById("servicesText").style.marginLeft = "42%";
+    document.getElementById("servicesTitle").style.marginLeft = "42%";
    
   } 
 }
@@ -78,14 +81,14 @@ function scrollFunction() {
   return (
     <div className='serviceRow'>
       <Row className=' pt-2' >
-        <h2 className='servicesText  ps-4 text-white' id='servicesText'>Our Services<FontAwesomeIcon icon={faArrowDown} size='1x' className='arrowIcon ms-2' id='arrowIcon'/></h2>
+        <h2 className='servicesText  ps-4 text-white' id='servicesTitle'>Our Services<FontAwesomeIcon icon={faArrowDown} size='1x' className='arrowIcon ms-2' id='arrowIcon'/></h2>
       </Row>
 
       <Row className='d-flex align-items-center servicesRow'>
           <Col xs="1" className='text-end ps-3 pe-0' >
           <FontAwesomeIcon icon={faChevronLeft} size='3x' className='previousArrowLeft' id='previousArrowLeft' onClick={()=>handleClick('leftArrow')}/>
           </Col>
-        <Col xs="10" className=' p-0 d-md-flex justify-content-md-end align-items-center h-100'>
+        <Col xs="10" className=' p-0 d-md-flex justify-content-md-end align-items-center h-100' id='serviceDisplay'>
            <Col xs="12" md="6" className='text-center'>
             <img src={Portfolio} alt="image" className='serviceImg h-100 text-center' id='serviceImg'  />
           </Col>

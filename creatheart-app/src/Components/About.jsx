@@ -33,7 +33,7 @@ function About() {
                       </Col>
                 </Row>
           </Col>
-          <Col xs='12' md="5" className='p-0 overflow-hidden ms-3'>
+          <Col xs='12' md="5" className='p-0  ms-5'>
             <img src={Cherukkanwithphone} className='cherkkanImage'></img>
           </Col>
         </Row>

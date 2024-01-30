@@ -11,18 +11,19 @@
     height: 600px;  
     animation: slideright 2s ease-in;
     animation-delay: 5s;
+    
 
 }
 
 
 .homePageTitle{
-    display: none;
     color: white;
     position: relative;
     font-size: calc(1em + 4vw);
     font-weight: 600;
     z-index: 1;
     animation: fadeup 1s ease-in ;
+    animation-delay: 3.5;
     
 }
 .letterGold{
@@ -50,11 +51,11 @@
         margin-right:0%;
     }
 }
-@media (max-width: 480px){
+@media (max-width: 600px){
     .frontPageImage{
         height: 550px;
     }
     .homeRow{
-        height: 700px;
+        height: 735px;
     }
 }

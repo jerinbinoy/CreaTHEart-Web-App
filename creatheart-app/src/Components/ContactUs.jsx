@@ -21,11 +21,11 @@ function ContactUs() {
         </Row>
         <Row className='mt-5 '>
           <ul className='d-flex socialMediaLinks justify-content-center align-items-center' id='socialMediaLinks'>
-            <li className='pe-5' ><FontAwesomeIcon icon={faEnvelope} color='white' size='2x' className='socialMediaLink' /></li>
-            <li className='pe-5'><FontAwesomeIcon icon={faWhatsapp} color='white' size='2x' className='socialMediaLink'/></li>
-            <li className='pe-5'><FontAwesomeIcon icon={faInstagram} color='white' size='2x' className='socialMediaLink'/></li>
-            <li className='pe-5'><FontAwesomeIcon icon={faFacebook} color='white' size='2x' className='socialMediaLink'/></li>
-            <li className='pe-5'><FontAwesomeIcon icon={faPhone} color='white' size='2x' className='socialMediaLink'  /></li>
+            <a className='pe-5'  href='mailto:creatheartofficial@gmail.com'><FontAwesomeIcon icon={faEnvelope} color='white' size='2x' className='socialMediaLink' /></a>
+            <a className='pe-5' href='https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2F918758527897&e=AT37c40OJuw9x4le06UcQP05IeIQtUKOcDEq4Gnkc-K3mn-E2Ef0Zg7GkKidbT2eX8t0G9VaW8F1ghH-fbyvKjFD-l59o1WFF8vJa9lmDimmQ4pu8hIs98A'><FontAwesomeIcon icon={faWhatsapp} color='white' size='2x' className='socialMediaLink'/></a>
+            <a className='pe-5' href='https://www.instagram.com/creatheart?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='><FontAwesomeIcon icon={faInstagram} color='white' size='2x' className='socialMediaLink'/></a>
+            <a className='pe-5' href='https://m.facebook.com/creatheartofficial'><FontAwesomeIcon icon={faFacebook} color='white' size='2x' className='socialMediaLink'/></a>
+            <a className='pe-5' href='tel:+918758527897'><FontAwesomeIcon icon={faPhone} color='white' size='2x' className='socialMediaLink'  /></a>
           </ul>
         </Row>
         <Row className='d-flex justify-content-center'  >
@@ -53,6 +53,7 @@ function ContactUs() {
             </Row>
             
         </Row>
+        
         
     </div>
   )
