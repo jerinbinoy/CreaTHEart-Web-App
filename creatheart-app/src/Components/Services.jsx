@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import './Services.css';
-import {Row,Col} from 'react-bootstrap';
+import {Row,Col, Button} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown,faChevronRight,faChevronLeft} from '@fortawesome/free-solid-svg-icons'
 import Portfolio from '../Assets/portfolio.svg';
 import { collection,getDocs} from "firebase/firestore";
 import {FirebaseApp} from '../Firebase/config';
+import ServiceModal from './Modal/ServiceModal';
 
 
 function Services() {
@@ -78,6 +79,7 @@ function scrollFunction() {
   } 
 }
 
+
   return (
     <div className='serviceRow'>
       <Row className=' pt-2' >
@@ -96,7 +98,11 @@ function scrollFunction() {
           <Col xs="12" md="6" className='text-center '>
             <h1 className='serviceTitle h-50 text-center'id='serviceTitle' >Portfolio Making</h1>
             <p id="serviceDetails">At Creatheart, we believe in the power of a well-crafted portfolio to tell your story, highlight your achievements, and make a lasting impression. Our Portfolio Making Services are designed to elevate your personal or professional brand through visually stunning and strategically structured portfolios.</p>
+          <ServiceModal />
           </Col>
+          
+          
+          
         </Col>
           
           <Col xs="1" className='text-center ps-0 pe-3 pe-md-0 ps-lg-5'>
