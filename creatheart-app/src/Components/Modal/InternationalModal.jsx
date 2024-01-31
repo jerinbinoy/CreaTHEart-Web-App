@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Template from '../../Assets/cv template.jpg';
@@ -16,6 +17,8 @@ function Example() {
         show={show}
         onHide={() => setShow(false)}
         fullscreen='true'
+        backdrop="static"
+        size='lg'
         aria-labelledby="example-custom-modal-styling-title"
         
       >
@@ -25,7 +28,9 @@ function Example() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={Template} alt="" />
+        <Col >
+          <img src={Template} alt="" className='w-100'/>
+          </Col>
         </Modal.Body>
       </Modal>
     </>
