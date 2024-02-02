@@ -8,7 +8,7 @@ function About() {
   
 
   return (
-    <div className='aboutRowTitle'>
+    <div className='aboutRowTitle' id='aboutSection'>
         <Row >
             <Col className=' d-flex justify-content-center mt-3 p-0'>
               <h2 className='aboutTitle'>

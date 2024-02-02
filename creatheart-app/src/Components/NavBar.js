@@ -8,6 +8,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Button from 'react-bootstrap/esm/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './Navbar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 
 
 function NavBar() {
@@ -32,7 +34,7 @@ function NavBar() {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   
-                  <Button href="home" className='me-4 homebutton' variant="outline-warning">Home</Button>
+                  <Button href="#homeSection" className='me-4 homebutton' variant="outline-warning">Home</Button>
                   <Dropdown >
                     <Dropdown.Toggle variant="outline-warning" id="dropdown-basic" className='me-2'>
                       Services
@@ -85,9 +87,10 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
-                  <Button href="about" className='me-4' variant="outline-warning">About</Button>
-                  <Button href="#action2" className='me-4' variant="outline-warning">Contact Us</Button>
+                  <Button href="#aboutSection" className='me-4' variant="outline-warning">About</Button>
+                  <Button href="#contactSection" className='me-0' variant="outline-warning">Contact Us</Button>
                 </Nav>
+                  <a className='pe-3' href='https://wa.me/918758527897.'><FontAwesomeIcon icon={faWhatsapp}  size='2x' className='socialMediaLink'/></a>
                 
             </Offcanvas.Body>
             </Navbar.Offcanvas>

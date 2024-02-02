@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home.js';
 import About from './Components/About.jsx';
 import Services from './Components/Services.jsx';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Reviews from './Components/Reviews.jsx';
 import ContactUs from './Components/ContactUs.jsx';
 import Footer from './Components/Footer.jsx';
@@ -16,11 +15,15 @@ function App() {
   return (
     <>
     <Preloader />
-    <NavBar />
+    <NavBar />    
     <Home />
+  
     <Services />
+  
     <About />
+  
     <Reviews/>
+  
     <ContactUs/>
     <Footer />
     

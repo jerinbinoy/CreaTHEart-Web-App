@@ -10,8 +10,7 @@ import Ladywithphone from '../Assets/Ladywithphone.png';
 import Girlwithphone from '../Assets/Girlwithphone.png';
 
 function Home() {
-  //const [title,setTitle] = useState(false);
-  const [homeChange,setHomeChange] = useState(false);
+  
   let [increment,setIncrement] = useState(0);
   const homeImages = [{Image:Manwithlap},
                       {Image:Boywithlap},
@@ -30,10 +29,7 @@ setInterval(()=>{
   increment < 4 ? setIncrement(increment += 1) : setIncrement(0);
 },6000);
 
-function scroll(){
-      document.documentElement.scrollTop = 700;
-      document.body.scrollTop = 700;
-}
+
 
 
   return (
@@ -53,7 +49,7 @@ function scroll(){
           </Col>
             
            <Col className='d-flex align-items-start justify-content-center'>
-              <Button variant='warning' size='lg' onClick={()=> scroll}>
+              <Button variant='warning' size='lg' href='#servicesSection'>
                   Get Started
                   <FontAwesomeIcon icon={faChevronRight}  className='previousArrowRight ms-3' />
               </Button>

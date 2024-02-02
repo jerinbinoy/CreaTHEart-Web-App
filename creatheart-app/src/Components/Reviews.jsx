@@ -8,6 +8,7 @@ import {FirebaseApp} from '../Firebase/config';
 import { collection,getDocs} from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
 import AddreviewAlert from './Alerts/AddreviewAlert';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 
@@ -18,6 +19,7 @@ function Reviews() {
   const [heading, setHeading] = useState('');
   const [comment, setComment] = useState('');
   const [show, setShowing] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   
 
   useEffect(() => {
@@ -30,10 +32,10 @@ function Reviews() {
   
  const finalData = [];
 
- reviewsData.forEach((doc) => {
+ reviewsData.forEach((doc,id) => {
         let individualData = doc.data();
         finalData.push(
-          <Card  text='white' style={{ width: '18rem'}} className="mb-5 ms-5 mt-3 Cards">
+          <Card  text='white' style={{ width: '18rem'}} className="mb-5 ms-5 mt-3 Cards" id={id}>
           <Card.Header className="headerText">{individualData.Name}</Card.Header>
           <Card.Body>
             <Card.Title>{individualData.Heading}</Card.Title>
@@ -45,7 +47,8 @@ function Reviews() {
           </Card>
             );  
 })  
-  async function setData(){
+async function setData(){
+  setLoading(true);
     const d = new Date();
      let year = d.getFullYear();
      let month = d.getMonth();
@@ -59,6 +62,7 @@ function Reviews() {
     });
     setModalShow(false);
     setShowing(true);
+    setLoading(false);
   }
   return (
     <div>
@@ -92,12 +96,21 @@ function Reviews() {
                   </div>
                 </Modal.Header>
                 <Modal.Body>
+                  <Form noValidate>
                     <FloatingLabel controlId="floatingPassword" label="Fullname" className='mb-2'>
-                      <Form.Control type="text" placeholder="Fullname" id='fullName' value={fullName} onChange={(e)=> setFullName(e.target.value) }/>
+                      <Form.Control type="text" placeholder="Fullname" id='fullName' value={fullName} onChange={(e)=> setFullName(e.target.value) } required/>
+                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                      <Form.Control.Feedback type="invalid">
+                        This field is required
+                      </Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel controlId="floatingPassword" label="Heading" className='mb-2'>
-                      <Form.Control type="text" placeholder="Heading" id='headingText' value={heading} onChange={(e)=> setHeading(e.target.value) }/>
+                      <Form.Control type="text" placeholder="Heading" id='headingText' value={heading} onChange={(e)=> setHeading(e.target.value) } required/>
+                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                      <Form.Control.Feedback type="invalid">
+                        This field is required
+                      </Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel controlId="floatingTextarea2" label="Comments" >
@@ -107,12 +120,27 @@ function Reviews() {
                       style={{ height: '100px' }}
                       id='commentText'
                       value={comment} onChange={(e)=> setComment(e.target.value) }
-                    />
-                  </FloatingLabel>
+                      required
+                      />
+                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                      <Form.Control.Feedback type="invalid">
+                        This field is required
+                      </Form.Control.Feedback>
+                    </FloatingLabel>
+                  </Form>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant='outline-dark'onClick={()=> setModalShow(false)}>Cancel</Button>
-                  <Button onClick={setData} >Submit</Button>
+                  <Button onClick={setData} disabled={isLoading}>
+                  { isLoading ? <Spinner
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                        /> : null }
+                    {isLoading ? 'Submitting…' : 'Submit'}
+                  </Button>
                 </Modal.Footer>
               </Modal>
               {show ? <AddreviewAlert display='true' /> : null}

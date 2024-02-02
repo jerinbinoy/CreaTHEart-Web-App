@@ -65,24 +65,8 @@ function Services() {
         }
   }
   
-  window.onscroll = function() {scrollFunction()};
-  
-
-function scrollFunction() {
-  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-    document.getElementById("arrowIcon").style.opacity = "0";
-    document.getElementById("servicesTitle").style.marginLeft = "0px";
-    
-  } else {
-    document.getElementById("arrowIcon").style.opacity = "1";
-    document.getElementById("servicesTitle").style.marginLeft = "0px";
-   
-  } 
-}
-
-
   return (
-    <div className='serviceRow'>
+    <div className='serviceRow' id='servicesSection'>
       <Row className=' pt-2' >
         <h2 className='servicesText  ps-4 text-white' id='servicesTitle'>Our Services<FontAwesomeIcon icon={faArrowDown} size='1x' className='arrowIcon ms-2' id='arrowIcon'/></h2>
       </Row>

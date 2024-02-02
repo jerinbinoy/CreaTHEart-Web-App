@@ -8,7 +8,8 @@
     overflow-x: hidden;
 }
 .frontPageImage{
-    height: 600px;  
+    height: 600px;
+    width: 100%;  
     animation: slideright 2s ease-in;
     animation-delay: 5s;
     
@@ -53,7 +54,8 @@
 }
 @media (max-width: 600px){
     .frontPageImage{
-        height: 550px;
+        height: 500px;
+        margin-top: 20px;
     }
     .homeRow{
         height: 735px;
