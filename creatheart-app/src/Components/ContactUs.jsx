@@ -10,6 +10,8 @@ import Button from 'react-bootstrap/Button';
 import {FirebaseApp} from '../Firebase/config';
 import { doc, setDoc } from "firebase/firestore";
 import Spinner from 'react-bootstrap/Spinner';
+import { useRef } from 'react';
+import emailjs, {sendForm} from '@emailjs/browser';
 
 
 
@@ -17,6 +19,7 @@ function ContactUs() {
   const [validated, setValidated] = useState(false);
   const [show, setShow] = useState(false);
   const [isLoading, setLoading] = useState(false);
+  const Formdata = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -50,10 +53,24 @@ async function setData(){
             Date: fullDate
           });
           setShow(true);
+         
+          
         }
-      }
+        
+        
+  const sendEmail = (e) => {
+          emailjs.sendForm('service_4vpabwq', 'template_aa870bf', Formdata.current, 'DRBicIS-r9mBl3aJq')
+          .then((result) => {
+            console.log(result.text);
+          }, (error) => {
+            console.log(error.text);
+          });
+        };
+        sendEmail();
+}
 
-  return (
+
+return (
     <div className='contactUsSection' id='contactSection'>
         <Row className=' collectionOfImages m-0 p-0'>
                 
@@ -73,10 +90,10 @@ async function setData(){
         <Row className='d-flex justify-content-center'  >
             <Row className='contactForm  m-5 '>
               <h3 className='text-center mt-2 contactFormTitle text-white'>Write to us</h3>
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Form noValidate validated={validated} onSubmit={handleSubmit} ref={Formdata}>
                     <Form.Group className="mb-3 mt-2" controlId="exampleForm.ControlInput1">
                       <Form.Label className='text-white'>Name</Form.Label>
-                      <Form.Control size='sm' type="text" placeholder="Fullname" required/>
+                      <Form.Control size='sm' type="text" placeholder="Fullname" required name='name'/>
                       <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                       <Form.Control.Feedback type="invalid">
                         This field is required
@@ -84,7 +101,7 @@ async function setData(){
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
                       <Form.Label className='text-white'>Email</Form.Label>
-                      <Form.Control size='sm' type="email" placeholder="name@example.com" required/>
+                      <Form.Control size='sm' type="email" placeholder="name@example.com" required name='email'/>
                       <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                       <Form.Control.Feedback type="invalid">
                         This field is required

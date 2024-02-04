@@ -15,6 +15,9 @@ function Services() {
   let servicesCollection = [];
   let [count,setCount] = useState(0);
   const [services, setServices] = useState([]);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const minSwipeDistance = 50 ;
 
   useEffect(() => {
     async function handleclick(){
@@ -30,11 +33,27 @@ function Services() {
     servicesCollection.push(serviceData);
   });
 
+
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX)
+  }
   
-   if (document.body.scrollLeft){
-    handleClick('rightArrow')
-   }
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
   
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right')
+    if(isLeftSwipe){
+       handleClick("leftArrow")
+    }else if (isRightSwipe){
+      handleClick("rightArrow")
+    }
+  }
   
   
 
@@ -71,7 +90,7 @@ function Services() {
         <h2 className='servicesText  ps-4 text-white' id='servicesTitle'>Our Services<FontAwesomeIcon icon={faArrowDown} size='1x' className='arrowIcon ms-2' id='arrowIcon'/></h2>
       </Row>
 
-      <Row className='d-flex align-items-center servicesRow'>
+      <Row className='d-flex align-items-center servicesRow' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
           <Col xs="1" className='text-end ps-3 pe-0' >
           <FontAwesomeIcon icon={faChevronLeft} size='3x' className='previousArrowLeft' id='previousArrowLeft' onClick={()=>handleClick('leftArrow')}/>
           </Col>

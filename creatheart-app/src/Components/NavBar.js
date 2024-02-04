@@ -90,7 +90,7 @@ function NavBar() {
                   <Button href="#aboutSection" className='me-4' variant="outline-warning">About</Button>
                   <Button href="#contactSection" className='me-0' variant="outline-warning">Contact Us</Button>
                 </Nav>
-                  <a className='pe-3' href='https://wa.me/918758527897.'><FontAwesomeIcon icon={faWhatsapp}  size='2x' className='socialMediaLink'/></a>
+                  <a className='pe-3' href='https://wa.me/918758527897?text=I%20wish%20to%20know%20more%20about%20CreaTHEart'><FontAwesomeIcon icon={faWhatsapp}  size='2x' className='socialMediaLink'/></a>
                 
             </Offcanvas.Body>
             </Navbar.Offcanvas>
