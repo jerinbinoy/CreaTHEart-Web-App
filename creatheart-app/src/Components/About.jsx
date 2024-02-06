@@ -19,7 +19,7 @@ function About() {
         </Row>
         <Row className='aboutContent d-flex align-items-center justify-content-center'>
           
-          <Col className='aboutText p-4 shadow-sm d-grid mb-5 ms-2 mt-5' xs="11" md="6">
+          <Col className='aboutText p-4 shadow-sm d-grid mb-5 ms-2 mt-5' xs="11" md="5">
             <h3 className='text-center'>Welcome to CreaTheart - Where every design tells a Story!</h3><br />
                 <Row>
                       <Col xs='12' md="4" className=' position-relative p-2'>
@@ -33,7 +33,7 @@ function About() {
                       </Col>
                 </Row>
           </Col>
-          <Col xs='12' md="5" className='p-0  ms-5'>
+          <Col xs='12' md="5" className='p-0 ms-md-5 cherkkanimagediv'>
             <img src={Cherukkanwithphone} className='cherkkanImage'></img>
           </Col>
         </Row>

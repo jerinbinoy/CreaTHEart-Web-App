@@ -10,9 +10,6 @@
 .frontPageImage{
     height: 600px;
     width: 100%;  
-    animation: slideright 2s ease-in;
-    animation-delay: 5s;
-    
 
 }
 

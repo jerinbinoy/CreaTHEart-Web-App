@@ -10,10 +10,10 @@ import {FirebaseApp} from '../Firebase/config';
 import ServiceModal from './Modal/ServiceModal';
 
 
-function Services() {
+function Services({count,setCount}) {
 
   let servicesCollection = [];
-  let [count,setCount] = useState(0);
+  // let [count,setCount] = useState(0);
   const [services, setServices] = useState([]);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -49,9 +49,9 @@ function Services() {
     const isRightSwipe = distance < -minSwipeDistance
     if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right')
     if(isLeftSwipe){
-       handleClick("leftArrow")
+       handleClick("rightArrow")
     }else if (isRightSwipe){
-      handleClick("rightArrow")
+      handleClick("lefttArrow")
     }
   }
   
@@ -107,7 +107,7 @@ function Services() {
            
         </Col>
           
-          <Col xs="1" className='text-center ps-0 pe-3 pe-md-0 ps-lg-5'>
+          <Col xs="1" className='text-center ps-0 pe-0 pe-md-0 ps-lg-5'>
              <FontAwesomeIcon icon={faChevronRight} size='3x' className='nextArrowRight' id='nextArrowRight' onClick={()=>handleClick('rightArrow')}/>
           </Col>
         

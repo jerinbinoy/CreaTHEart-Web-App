@@ -9,16 +9,17 @@ import Services from './Components/Services.jsx';
 import Reviews from './Components/Reviews.jsx';
 import ContactUs from './Components/ContactUs.jsx';
 import Footer from './Components/Footer.jsx';
+import { useState } from 'react';
 
 function App() {
-    
+    const [count,setCount] = useState(0);
   return (
     <>
     <Preloader />
-    <NavBar />    
+    <NavBar onClick={(e)=> setCount(e)} />    
     <Home />
   
-    <Services />
+    <Services count={count} setCount={(e)=> setCount(e)} />
   
     <About />
   

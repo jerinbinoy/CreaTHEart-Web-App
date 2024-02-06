@@ -35,7 +35,7 @@ function Reviews() {
  reviewsData.forEach((doc,id) => {
         let individualData = doc.data();
         finalData.push(
-          <Card  text='white' style={{ width: '18rem'}} className="mb-5 ms-5 mt-3 Cards" id={id}>
+          <Card  text='white' style={{ width: '16rem'}} className="mb-5 ms-5 mt-3 Cards" id={id}>
           <Card.Header className="headerText">{individualData.Name}</Card.Header>
           <Card.Body>
             <Card.Title>{individualData.Heading}</Card.Title>
@@ -68,7 +68,7 @@ async function setData(){
     <div>
       <Row className='Reviews'>
             <Row>
-                <h2 className='text-center text-white m-3 mb-1'>Reviews</h2>
+                <h2 className='text-center text-white mt-3 mb-1'>Reviews</h2>
             </Row>
             
         <Row className='reviewsRow p-0 mb-3' id='reviewsRow'>

@@ -10,7 +10,7 @@ function Example() {
   return (
     <>
       <Button variant="warning" onClick={() => setShow(true)} className='mb-2'>
-        International Resume Template
+        International Resume Templates (from ₹1000 to ₹1300)
       </Button>
 
       <Modal

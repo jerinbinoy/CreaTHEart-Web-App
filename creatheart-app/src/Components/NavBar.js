@@ -6,13 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Button from 'react-bootstrap/esm/Button';
-import Dropdown from 'react-bootstrap/Dropdown';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
+import {faWhatsapp} from '@fortawesome/free-brands-svg-icons';
 
 
-function NavBar() {
+
+function NavBar({onClick}) {
 
   return (
     <>
@@ -35,24 +35,7 @@ function NavBar() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   
                   <Button href="#homeSection" className='me-4 homebutton' variant="outline-warning">Home</Button>
-                  <Dropdown >
-                    <Dropdown.Toggle variant="outline-warning" id="dropdown-basic" className='me-2'>
-                      Services
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Resume/CV Making</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">LinkedIn Profile Creation</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Poster Design</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Web Designing</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Advertisement Making</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Portfolio</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Animation</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Video Editing</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Logo Making</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Digital Marketing</Dropdown.Item>
-                     </Dropdown.Menu>
-                  </Dropdown>
+                  <Button href="#servicesSection" className='me-2 servicesbutton' variant="outline-warning">Services</Button>
 
                 </Nav>
             </Offcanvas.Body>

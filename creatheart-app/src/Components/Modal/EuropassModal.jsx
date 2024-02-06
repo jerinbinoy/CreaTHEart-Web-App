@@ -10,7 +10,7 @@ function Example() {
   return (
     <>
       <Button variant="warning" onClick={() => setShow(true)}>
-        Europass Resume Template
+        Europass Resume Templates (₹599)
       </Button>
 
       <Modal
@@ -24,7 +24,7 @@ function Example() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            Europass Resume Template
+            Europass Resume Template 
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

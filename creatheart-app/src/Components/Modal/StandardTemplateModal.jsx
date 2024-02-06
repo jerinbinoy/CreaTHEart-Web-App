@@ -15,7 +15,7 @@ function Example() {
   return (
     <>
       <Button variant="warning" onClick={() => setShow(true)} className='mb-2'>
-       Standard Resume Template
+       Standard Resume Templates (from ₹799 to ₹1100)
       </Button>
 
       <Modal
@@ -35,22 +35,22 @@ function Example() {
         <Modal.Body>
           <Col className='d-grid justify-content-center p-2'>
             <img src={Stan1} alt="" className='w-100'/>
-            <Button href='https://wa.me/p/6809792645705766/918758527897' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
+            <Button href='https://wa.me/918758527897?text=I%20am%20interested%20in%20this%20template%20-2010' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
             <hr></hr>
             <img src={Stan2} alt="" className='w-100'/>
-            <Button href='https://wa.me/p/6809792645705766/918758527897' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
+            <Button href='https://wa.me/918758527897?text=I%20am%20interested%20in%20this%20template%20-2020' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
             <hr></hr>
             <img src={Stan3} alt="" className='w-100'/>
-            <Button href='https://wa.me/p/6809792645705766/918758527897' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
+            <Button href='https://wa.me/918758527897?text=I%20am%20interested%20in%20this%20template%20-2030' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
             <hr></hr>
             <img src={Stan4} alt="" className='w-100'/>
-            <Button href='https://wa.me/p/6809792645705766/918758527897' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
+            <Button href='https://wa.me/918758527897?text=I%20am%20interested%20in%20this%20template%20-2040' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
             <hr></hr>
             <img src={Stan5} alt="" className='w-100'/>
-            <Button href='https://wa.me/p/6809792645705766/918758527897' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
+            <Button href='https://wa.me/918758527897?text=I%20am%20interested%20in%20this%20template%20-2050' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
             <hr></hr>
             <img src={Stan6} alt="" className='w-100'/>
-            <Button href='https://wa.me/p/6809792645705766/918758527897' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
+            <Button href='https://wa.me/918758527897?text=I%20am%20interested%20in%20this%20template%20-2060' variant='primary' className='text-center mt-2 mb-2'>Select</Button>
             
             
           </Col>

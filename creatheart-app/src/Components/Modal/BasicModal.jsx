@@ -10,7 +10,7 @@ function Example() {
   return (
     <>
       <Button variant="warning" onClick={() => setShow(true)} className='mb-2'>
-        Basic Resume Template
+        Basic Resume Templates (from ₹399 to ₹599)
       </Button>
 
       <Modal

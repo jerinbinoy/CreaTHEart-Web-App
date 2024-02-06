@@ -3,13 +3,22 @@
     overflow-x: scroll;
     flex-direction: row;
     flex-wrap: nowrap;
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    
 
+}
+.row{
+    --bs-gutter-x: 0rem;
 }
 .reviewsRow::-webkit-scrollbar{
     display: none;
 }
 .Reviews{
     background-color: rgb(5, 24, 38);
+    width: 100%;
+   
 }
 .Cards{
     background: linear-gradient(rgb(89, 114, 129),rgb(5, 24, 38));

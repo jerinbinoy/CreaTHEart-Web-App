@@ -9,10 +9,10 @@ function Footer() {
        <Row className='d-flex justify-content-center pt-3 footer'>
     
         <ul className='d-flex justify-content-center items text-white'>
-            <li className='ms-3'>Home</li>
-            <li className='ms-3'>Services</li>
-            <li className='ms-3'>About</li>
-            <li className='ms-3'>Contact Us</li>
+            <a className='ms-3 links' href="#homeSection">Home</a>
+            <a className='ms-3 links' href="#servicesSection">Services</a>
+            <a className='ms-3 links' href="#aboutSection">About</a>
+            <a className='ms-3 links' href="#contactSection">Contact Us</a>
         </ul><hr />
         <h6 className='text-center allRights'>@2024|Creatheart.com|All Rights Reserved</h6>
        </Row>

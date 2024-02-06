@@ -12,3 +12,10 @@
 .allRights{
     color: rgb(198, 196, 196);
 }
+.links{
+    text-decoration: none;
+    color: white;
+}
+.links:hover{
+    color: rgb(253, 213, 32);
+}
