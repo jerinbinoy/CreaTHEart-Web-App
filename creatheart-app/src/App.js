@@ -10,6 +10,8 @@ import Reviews from './Components/Reviews.jsx';
 import ContactUs from './Components/ContactUs.jsx';
 import Footer from './Components/Footer.jsx';
 import { useState } from 'react';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AdminLogin from './Components/Admin/AdminLogin.jsx';
 
 function App() {
     const [count,setCount] = useState(0);
@@ -28,6 +30,13 @@ function App() {
     <ContactUs/>
     <Footer />
     
+    <Router>
+    <Routes>
+      <Route path='/Admin' element={<AdminLogin />}>
+      </Route>
+    </Routes>
+    </Router>
+
     </>
   );
 }

@@ -1,0 +1,22 @@
+.adminPanel{
+    background-color: rgb(14, 44, 62);
+}
+.leftRow{
+    background-color: rgb(5, 27, 41); 
+    
+}
+.messagesTitle{
+    font-weight: 600;
+    
+}
+.dashboardTitle{
+    font-weight: 600;
+}
+.reviewsTitle{
+    font-weight: 600;
+}
+.tabContent{
+    height: 660px;
+    overflow-y: scroll;
+}
+
