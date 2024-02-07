@@ -12,7 +12,7 @@ import {faWhatsapp} from '@fortawesome/free-brands-svg-icons';
 
 
 
-function NavBar({onClick}) {
+function NavBar() {
 
   return (
     <>

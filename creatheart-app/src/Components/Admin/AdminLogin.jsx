@@ -39,7 +39,7 @@ function AdminLogin() {
     <div>
         
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
                 <Modal.Title>Admin Login</Modal.Title>
                 </Modal.Header>

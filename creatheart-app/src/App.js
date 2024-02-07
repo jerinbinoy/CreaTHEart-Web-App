@@ -12,11 +12,19 @@ import Footer from './Components/Footer.jsx';
 import { useState } from 'react';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminLogin from './Components/Admin/AdminLogin.jsx';
+import UsersLogin from './Components/Users/UsersLogin.jsx';
 
 function App() {
     const [count,setCount] = useState(0);
   return (
     <>
+    <Router>
+    <Routes>
+      <Route path='/Admin' exact element={<AdminLogin />}>
+      </Route>
+      <Route path='/Login' element={<UsersLogin/>}></Route>
+    </Routes>
+    </Router>
     <Preloader />
     <NavBar onClick={(e)=> setCount(e)} />    
     <Home />
@@ -30,12 +38,7 @@ function App() {
     <ContactUs/>
     <Footer />
     
-    <Router>
-    <Routes>
-      <Route path='/Admin' element={<AdminLogin />}>
-      </Route>
-    </Routes>
-    </Router>
+    
 
     </>
   );
