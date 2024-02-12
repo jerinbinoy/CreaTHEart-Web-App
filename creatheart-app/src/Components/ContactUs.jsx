@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import './ContactUs.css';
 import {Row} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +11,9 @@ import {FirebaseApp} from '../Firebase/config';
 import { doc, setDoc } from "firebase/firestore";
 import Spinner from 'react-bootstrap/Spinner';
 import { useRef } from 'react';
-import emailjs, {sendForm} from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
+import { AuthContext } from '../Context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -20,8 +22,11 @@ function ContactUs() {
   const [show, setShow] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const Formdata = useRef();
+  const {user} = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
+   
     event.preventDefault();
     setLoading(true);
     const form = event.currentTarget;
@@ -38,7 +43,7 @@ function ContactUs() {
           setLoading(false);
         })
         };
- 
+  
         
 async function setData(){
           const d = new Date();
@@ -69,6 +74,10 @@ async function setData(){
         sendEmail();
 }
 
+const LoginRequest = (e) =>{
+  e.preventDefault();
+  navigate('/Login');
+}
 
 return (
     <div className='contactUsSection' id='contactSection'>
@@ -90,7 +99,7 @@ return (
         <Row className='d-flex justify-content-center'  >
             <Row className='contactForm  m-5 p-3'>
               <h3 className='text-center mt-2 contactFormTitle text-white'>Write to us</h3>
-                <Form noValidate validated={validated} onSubmit={handleSubmit} ref={Formdata}>
+                <Form noValidate validated={validated} onSubmit={user ? handleSubmit : LoginRequest} ref={Formdata}>
                     <Form.Group className="mb-3 mt-2" controlId="exampleForm.ControlInput1">
                       <Form.Label className='text-white'>Name</Form.Label>
                       <Form.Control size='sm' type="text" placeholder="Fullname" required name='name'/>

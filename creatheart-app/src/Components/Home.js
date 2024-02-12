@@ -25,9 +25,10 @@ function Home() {
     document.getElementById('homePageTitle').style.display = "block";
   };*/
 
-setInterval(()=>{
-  increment < 4 ? setIncrement(increment += 1) : setIncrement(0);
-},6000);
+setTimeout(function imgChange(){
+    setIncrement(increment < 4 ? increment += 1 : increment = 0);
+    setTimeout(imgChange,6000);
+  },6000)
 
 
 

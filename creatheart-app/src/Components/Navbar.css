@@ -11,3 +11,10 @@
 .me-4.btn-outline-warning {
     --bs-btn-border-color : none;
 }
+.userbtn{
+    border-radius: 50%;
+}
+.userImg{
+    height:35px;
+    border-radius: 50%;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Row,Card,Button,Col} from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -9,6 +9,9 @@ import { collection,getDocs} from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
 import AddreviewAlert from './Alerts/AddreviewAlert';
 import Spinner from 'react-bootstrap/Spinner';
+import { AuthContext } from '../Context/AuthContext';
+import UsersLogin from './Users/UsersLogin';
+
 
 
 
@@ -20,7 +23,8 @@ function Reviews() {
   const [comment, setComment] = useState('');
   const [show, setShowing] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  
+  const [loginAlert, setLoginAlert] = useState(false);
+  const {user} = useContext(AuthContext);
 
   useEffect(() => {
     async function handleclick(){
@@ -76,8 +80,8 @@ async function setData(){
         { finalData}
         </Row>
         <Col className='text-center mb-5'>
-          <Button variant='warning' onClick={() => setModalShow(true)}>Add Review</Button>
-
+          <Button variant='warning' onClick={() => user ? setModalShow(true) : setLoginAlert(true)}>Add Review</Button>
+              {loginAlert ? <UsersLogin /> : null}
              <Modal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
@@ -97,9 +101,9 @@ async function setData(){
                 </Modal.Header>
                 <Modal.Body>
                   <Form noValidate>
-                    <FloatingLabel controlId="floatingPassword" label="Fullname" className='mb-2'>
+                    <FloatingLabel controlId="floatingName" label="Fullname" className='mb-2'>
                       <Form.Control type="text" placeholder="Fullname" id='fullName' value={fullName} onChange={(e)=> setFullName(e.target.value) } required/>
-                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                      <Form.Control.Feedback>Nice Name!</Form.Control.Feedback>
                       <Form.Control.Feedback type="invalid">
                         This field is required
                       </Form.Control.Feedback>

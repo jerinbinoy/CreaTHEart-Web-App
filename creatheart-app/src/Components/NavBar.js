@@ -9,10 +9,62 @@ import Button from 'react-bootstrap/esm/Button';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons';
-
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../Context/AuthContext';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+import Popover from 'react-bootstrap/Popover';
+import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
 
 
 function NavBar() {
+  const [signedInUser,setSignedinUser] = useState(null);
+
+  const {setUser} = useContext(AuthContext);
+
+  useEffect(()=>{
+
+  const auth = getAuth();
+   onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in
+    setUser(user);
+    setSignedinUser(user);
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    console.log('User signed out!');
+  }
+});
+  },[])
+
+const logOut = () =>{
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      setSignedinUser(null);
+      //setUser(null);
+      console.log('User signed out!');
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
+  
+
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+     Login
+    </Tooltip>
+  );
+
+  const popover = (props) => (
+    <Popover id="popover-basic" {...props}>
+      <p className='p-3 pb-0'>{signedInUser.displayName}</p>
+      <Button variant='dark' className='m-3 mt-0' onClick={()=> logOut()}>Logout</Button>
+    </Popover>
+  );
 
   return (
     <>
@@ -32,8 +84,8 @@ function NavBar() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
+                {signedInUser ? <OverlayTrigger trigger="click" placement="right" overlay={popover}><img src={signedInUser.photoURL} className='userImg' ></img></OverlayTrigger> : <OverlayTrigger placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}><Button className='userbtn ' href='/Login'><FontAwesomeIcon icon={faUser} /></Button></OverlayTrigger>}
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  
                   <Button href="#homeSection" className='me-4 homebutton' variant="outline-warning">Home</Button>
                   <Button href="#servicesSection" className='me-2 servicesbutton' variant="outline-warning">Services</Button>
 
