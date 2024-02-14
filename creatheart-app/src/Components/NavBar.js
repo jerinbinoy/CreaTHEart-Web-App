@@ -75,16 +75,13 @@ const logOut = () =>{
             <Navbar.Offcanvas
               id="offcanvasNavbar-expand-md"
               aria-labelledby="offcanvasNavbar-expand-md"
-              placement="start"
-              
+              placement="top" 
+              className="w-50"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
-                 
-                </Offcanvas.Title>
+              <Offcanvas.Header  closeButton>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                {signedInUser ? <OverlayTrigger trigger="click" placement="right" overlay={popover}><img src={signedInUser.photoURL} className='userImg' ></img></OverlayTrigger> : <OverlayTrigger placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}><Button className='userbtn ' href='/Login'><FontAwesomeIcon icon={faUser} /></Button></OverlayTrigger>}
+                {signedInUser ? <OverlayTrigger trigger="click" placement="right" overlay={popover}><img src={signedInUser.photoURL} className='userImg d-flex justify-content-center' ></img></OverlayTrigger> : <OverlayTrigger placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}><Button className='userbtn ' href='/Login'><FontAwesomeIcon icon={faUser} /></Button></OverlayTrigger>}
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Button href="#homeSection" className='me-4 homebutton' variant="outline-warning">Home</Button>
                   <Button href="#servicesSection" className='me-2 servicesbutton' variant="outline-warning">Services</Button>
@@ -113,19 +110,17 @@ const logOut = () =>{
             <Navbar.Offcanvas
               id="offcanvasNavbar-expand-md"
               aria-labelledby="offcanvasNavbar-expand-md"
-              placement="end"
+              placement="top"
+              className="w-50 navbarSecond"
                >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
-                 
-                </Offcanvas.Title>
+              <Offcanvas.Header >
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
                   <Button href="#aboutSection" className='me-4' variant="outline-warning">About</Button>
                   <Button href="#contactSection" className='me-0' variant="outline-warning">Contact Us</Button>
                 </Nav>
-                  <a className='pe-3' href='https://wa.me/918758527897?text=I%20wish%20to%20know%20more%20about%20CreaTHEart'><FontAwesomeIcon icon={faWhatsapp}  size='2x' className='socialMediaLink'/></a>
+                  <a className='pe-3 d-flex justify-content-center' href='https://wa.me/918758527897?text=I%20wish%20to%20know%20more%20about%20CreaTHEart'><FontAwesomeIcon icon={faWhatsapp}  size='2x' className='socialMediaLink'/></a>
                 
             </Offcanvas.Body>
             </Navbar.Offcanvas>

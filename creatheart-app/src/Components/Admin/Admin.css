@@ -10,6 +10,10 @@
     font-weight: 600;
     
 }
+.usersEngagedTitle{
+    font-weight: 600;
+    
+}
 .dashboardTitle{
     font-weight: 600;
 }
@@ -20,4 +24,5 @@
     height: 660px;
     overflow-y: scroll;
 }
+
 

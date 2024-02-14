@@ -18,3 +18,9 @@
     height:35px;
     border-radius: 50%;
 }
+@media (max-width: 1000px){
+    .navbarSecond{
+        margin-left: 50%;
+    }
+}
+

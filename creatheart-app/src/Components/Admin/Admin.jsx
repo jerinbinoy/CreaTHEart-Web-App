@@ -9,6 +9,7 @@ import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
 import {FirebaseApp} from '../../Firebase/config';
 import { collection,getDocs} from "firebase/firestore";
+import UsersTable from '../Tables/Table.jsx';
 
 
 
@@ -94,10 +95,10 @@ function Admin() {
                     Reviews
                     </ListGroup.Item>
                     <ListGroup.Item action href="#link3"  variant="dark" className='mb-2'>
-                    Analytics
+                    Users Engaged
                     </ListGroup.Item>
                     <ListGroup.Item action href="#link4"  variant="dark" >
-                    Users Engaged
+                    Analytics
                     </ListGroup.Item>
                 </ListGroup>
                 </Col>
@@ -109,9 +110,11 @@ function Admin() {
                         </Row>
                         <hr></hr>
                         <Row className=''>
+                            
                                 <ToastContainer className="position-static toastContainer">
                                     {finalData}
                                 </ToastContainer>
+                            
                         </Row>
 
                     </Tab.Pane>
@@ -123,6 +126,18 @@ function Admin() {
                         <Row className=''>
                                 <ToastContainer className="position-static toastContainer">
                                     {finalReviewsData}
+                                </ToastContainer>
+                        </Row>
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="#link3" className='p-3'>
+                    <Row>
+                         <h3 className='usersEngagedTitle text-dark'>Users Engaged</h3>
+                        </Row>
+                        <hr></hr>
+                        <Row className=''>
+                                <ToastContainer className="position-static toastContainer">
+                                    <UsersTable />
                                 </ToastContainer>
                         </Row>
                     </Tab.Pane>
