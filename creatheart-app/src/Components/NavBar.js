@@ -20,7 +20,7 @@ import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
 
 function NavBar() {
   const [signedInUser,setSignedinUser] = useState(null);
-
+  const adminEmail = 'jerinbinoy22@gmail.com'
   const {setUser} = useContext(AuthContext);
 
   useEffect(()=>{
@@ -29,10 +29,12 @@ function NavBar() {
    onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
+    if(user.email !== adminEmail){
     setUser(user);
     setSignedinUser(user);
+    
     const uid = user.uid;
-    // ...
+    }
   } else {
     // User is signed out
     console.log('User signed out!');

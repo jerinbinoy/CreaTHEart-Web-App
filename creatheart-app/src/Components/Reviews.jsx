@@ -12,9 +12,6 @@ import Spinner from 'react-bootstrap/Spinner';
 import { AuthContext } from '../Context/AuthContext';
 import UsersLogin from './Users/UsersLogin';
 
-
-
-
 function Reviews() {
   const [modalShow, setModalShow] = React.useState(false);
   const [reviewsData,setreviewsData] = useState([]);

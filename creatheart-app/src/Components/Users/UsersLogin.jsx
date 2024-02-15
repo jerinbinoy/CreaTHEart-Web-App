@@ -19,13 +19,16 @@ function UsersLogin() {
     const navigate = useNavigate();
     const {setUser} = useContext(AuthContext);
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+      setShow(false);
+      navigate('/');
+    }
     const requestLogin = (e) => { 
         e.preventDefault();
         const auth = getAuth();
-        //signInWithRedirect(auth, provider)
-        signInWithPopup(auth, provider)
-        //getRedirectResult(auth)
+        signInWithRedirect(auth, provider)
+        //signInWithPopup(auth, provider)
+        getRedirectResult(auth)
           .then((result) => {
             
             // This gives you a Google Access Token. You can use it to access the Google API.
@@ -79,7 +82,7 @@ async function userDataAssign(user){
         <>
             <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
-                <Modal.Title>Login</Modal.Title>
+                <Modal.Title>Signup and Login</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='d-grid'>
                 {alert ? alert : <Button variant="primary" onClick={requestLogin} className='mb-3'>
